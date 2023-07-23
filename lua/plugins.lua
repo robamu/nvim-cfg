@@ -27,23 +27,26 @@ require('packer').startup(function(use)
   use {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
-    dependencies = {
+    requires = {
       -- Automatically install LSPs to stdpath for neovim
-      { 'williamboman/mason.nvim', config = true, run = ":MasonUpdate" },
+      { 'williamboman/mason.nvim', run = ":MasonUpdate" },
       'williamboman/mason-lspconfig.nvim',
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
-    },
-  },
+    }
+  }
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
   }
-  use({
+  use {
     "nvim-treesitter/nvim-treesitter-textobjects",
     after = "nvim-treesitter",
     requires = "nvim-treesitter/nvim-treesitter",
-  })
+  }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.2',
     requires = { {'nvim-lua/plenary.nvim'} }
