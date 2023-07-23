@@ -15,20 +15,26 @@ local packer_bootstrap = ensure_packer()
 -- Plugin list
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use { "ellisonleao/gruvbox.nvim" }
+  use {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    config = function() vim.cmd.colorscheme 'gruvbox' end,
+  }
   use {
     'itchyny/lightline.vim',
     config = function() vim.cmd [[ echom 'lightline.vim' ]] end,
   }
   use {
-    "williamboman/mason.nvim",
-    run = ":MasonUpdate" -- :MasonUpdate updates registry contents
-  }
-  use {
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-    "folke/neodev.nvim"
-  }
+    -- LSP Configuration & Plugins
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      -- Automatically install LSPs to stdpath for neovim
+      { 'williamboman/mason.nvim', config = true, run = ":MasonUpdate" },
+      'williamboman/mason-lspconfig.nvim',
+      -- Additional lua configuration, makes nvim stuff amazing!
+      'folke/neodev.nvim',
+    },
+  },
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'

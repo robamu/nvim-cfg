@@ -2,12 +2,9 @@ vim.cmd("filetype off")
 vim.cmd("filetype plugin indent on")
 vim.cmd("set clipboard+=unnamedplus")
 
+vim.opt.background="dark"
 vim.opt.relativenumber=true
 vim.opt.number=true
-
--- or light if you want light mode
-vim.opt.background="dark"
-vim.cmd("colorscheme gruvbox")
 
 -- Better display for messages
 vim.opt.cmdheight = 2
