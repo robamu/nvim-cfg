@@ -53,12 +53,10 @@ require('packer').startup(function(use)
   }
   use {
     'nvim-telescope/telescope-fzf-native.nvim',
-    -- NOTE: If you are having trouble with this installation,
-    --       refer to the README for telescope-fzf-native for more instructions.
-    build = 'make',
-    cond = function()
-      return vim.fn.executable 'make' == 1
-    end,
+    run = [[
+      cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release &&
+      cmake --install build --prefix build
+    ]]
   }
   use {
     'andymass/vim-matchup',
