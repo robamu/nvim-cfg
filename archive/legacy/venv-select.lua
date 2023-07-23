@@ -1,0 +1,1 @@
+require("venv-selector").setup({})
