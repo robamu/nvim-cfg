@@ -4,6 +4,7 @@ vim.cmd("set clipboard+=unnamedplus")
 
 vim.opt.background="dark"
 vim.opt.relativenumber=true
+vim.opt.termguicolors=true
 vim.opt.number=true
 
 -- Better display for messages
