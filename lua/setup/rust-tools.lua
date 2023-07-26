@@ -1,12 +1,12 @@
 local function on_attach(client, buffer)
-  local keymap_opts = { buffer = buffer }
+  -- local keymap_opts = { buffer = buffer }
   -- Get signatures (and _only_ signatures) when in argument lists.
-  require "lsp_signature".on_attach({
-    doc_lines = 0,
-    handler_opts = {
-      border = "none"
-    },
-  })
+  -- require "lsp_signature".on_attach({
+    --doc_lines = 0,
+   -- handler_opts = {
+    --  border = "none"
+    --},
+  --})
 end
 
 -- Configure LSP through rust-tools.nvim plugin.
@@ -15,14 +15,6 @@ end
 local opts = {
   runnables = {
     use_telescope = true,
-  },
-  tools = {
-    inlay_hints = {
-      auto = true,
-      show_parameter_hints = false,
-      parameter_hints_prefix = "",
-      other_hints_prefix = "",
-    },
   },
 
   -- all the opts to send to nvim-lspconfig
