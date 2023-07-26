@@ -68,9 +68,9 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 -- Ensure the servers above are installed
 local mason_lspconfig = require 'mason-lspconfig'
 
-mason_lspconfig.setup {
-  ensure_installed = { "pyright", "rust_analyzer" },
-}
+mason_lspconfig.setup({
+  ensure_installed = { "lua_ls", "pyright", "rust_analyzer" },
+})
 
 mason_lspconfig.setup_handlers {
   function(server_name)
@@ -79,6 +79,35 @@ mason_lspconfig.setup_handlers {
       on_attach = on_attach,
       settings = servers[server_name],
     }
-  end,
+ end,
 }
+
+-- Configure LSP through rust-tools.nvim plugin.
+-- rust-tools will configure and enable certain LSP features for us.
+-- See https://github.com/simrat39/rust-tools.nvim#configuration
+local opts = {
+  runnables = {
+    use_telescope = true,
+  },
+
+  -- all the opts to send to nvim-lspconfig
+  -- these override the defaults set by rust-tools.nvim
+  -- see https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rust_analyzer
+  server = {
+    -- on_attach is a callback called when the language server attachs to the buffer
+    on_attach = on_attach,
+    settings = {
+      -- to enable rust-analyzer settings visit:
+      -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
+      ["rust-analyzer"] = {
+        -- enable clippy on save
+        checkOnSave = {
+          command = "clippy",
+        },
+      },
+    },
+  },
+}
+
+require("rust-tools").setup(opts)
 
