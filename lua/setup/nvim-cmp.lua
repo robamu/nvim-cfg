@@ -51,6 +51,10 @@ cmp.setup({
     { name = 'buffer', keyword_length = 2 },        -- source current buffer
     { name = 'luasnip' },         -- nvim-cmp source for vim-vsnip 
   },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
 })
 
 -- Enable completing paths in :
