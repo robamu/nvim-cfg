@@ -55,6 +55,7 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+  pyright = {}
 }
 
 -- Setup neovim lua configuration
