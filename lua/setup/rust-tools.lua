@@ -1,6 +1,13 @@
 local generic_cfg = require("setup/generic-lspcfg")
 local rt = require("rust-tools")
 
+local mason_registry = require("mason-registry")
+
+local codelldb = mason_registry.get_package("codelldb")
+local extension_path = codelldb:get_install_path() .. "/extension"
+local codelldb_path = extension_path .. "adapter/codelldb"
+local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
+
 -- Configure LSP through rust-tools.nvim plugin.
 -- rust-tools will configure and enable certain LSP features for us.
 -- See https://github.com/simrat39/rust-tools.nvim#configuration
@@ -29,5 +36,9 @@ rt.setup({
       },
     },
   },
+
+  dap = {
+    adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path)
+  }
 })
 
