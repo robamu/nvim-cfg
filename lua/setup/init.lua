@@ -1,5 +1,6 @@
 require("setup/gruvbox")
 require("setup/lspcfg")
+require("setup/rust-tools")
 require("setup/pyright-lsp")
 require("setup/autopairs")
 require("setup/nvim-cmp")
