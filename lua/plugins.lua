@@ -89,8 +89,9 @@ require('packer').startup(function(use)
 	  "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
   }
-  use 'mfussenegger/nvim-dap'
-  use 'rcarriga/nvim-dap-ui'
+  use('nvim-tree/nvim-web-devicons')
+  use('mfussenegger/nvim-dap')
+  use('rcarriga/nvim-dap-ui')
 end)
 
 
