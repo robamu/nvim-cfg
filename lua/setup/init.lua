@@ -5,4 +5,5 @@ require("setup/autopairs")
 require("setup/nvim-cmp")
 require("setup/telescope")
 require("setup/treesitter")
+require("setup/dap-config")
 
