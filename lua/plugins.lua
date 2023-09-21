@@ -16,6 +16,9 @@ local packer_bootstrap = ensure_packer()
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use {
+    "akinsho/toggleterm.nvim", tag = '*',
+  }
+  use {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,
     config = function() vim.cmd.colorscheme 'gruvbox' end,
