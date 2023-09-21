@@ -22,7 +22,7 @@ require('mason').setup()
 local mason_lspconfig = require('mason-lspconfig')
 
 mason_lspconfig.setup({
-  ensure_installed = { "lua_ls", "pyright", "rust_analyzer" },
+  ensure_installed = { "lua_ls", "pyright", "ruff_lsp", "rust_analyzer", },
 })
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
