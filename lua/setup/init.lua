@@ -9,4 +9,4 @@ require("setup/telescope")
 require("setup/treesitter")
 require("setup/dap-config")
 require("setup/web-devicons")
-
+require("setup/lualine")

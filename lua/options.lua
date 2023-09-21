@@ -2,7 +2,7 @@ vim.cmd("filetype off")
 vim.cmd("filetype plugin indent on")
 vim.cmd("set clipboard+=unnamedplus")
 
-let g:python3_host_prog = '/usr/bin/python3'
+vim.g.python3_host_prog = '/usr/bin/python3'
 
 vim.opt.background="dark"
 vim.opt.relativenumber=true

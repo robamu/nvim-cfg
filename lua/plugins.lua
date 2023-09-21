@@ -21,8 +21,8 @@ require('packer').startup(function(use)
     config = function() vim.cmd.colorscheme 'gruvbox' end,
   }
   use {
-    'itchyny/lightline.vim',
-    config = function() vim.cmd [[ echom 'lightline.vim' ]] end,
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   use {
     -- LSP Configuration & Plugins
