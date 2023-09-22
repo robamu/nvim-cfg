@@ -16,6 +16,9 @@ Right now, this configuration has been used for work in:
 - Rust
 - Python
 
+It is recommended to install [ripgrep](https://github.com/BurntSushi/ripgrep) and
+[fd](https://github.com/sharkdp/fd) for beter telescope functionality.
+
 # Additional steps
 
 Install [lazygit](https://github.com/jesseduffield/lazygit#ubuntu)
@@ -44,3 +47,5 @@ python3 -m pip install pynvim
 5. Auto-formatting:  `<Leader>f`
 6. telescope search in buffers:  `<Leader><Leader>`
 7. telescope search in last files: `<Leader>?`
+
+## Rust
