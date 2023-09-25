@@ -41,11 +41,12 @@ python3 -m pip install pynvim
 # Most important custom keybindings
 
 1. Leader key is remapped to `<Space>`.
-2. Open Terminal in same window: `<Leader>tt`, then `i` to go into terminal mode.
+2. Open Terminal in same window: `<Leader>t`, then `i` to go into terminal mode.
 3. Exit terminal mode: `<Leader><Esc>`
-4. Open `lazygit`: `<Leader>g`
-5. Auto-formatting:  `<Leader>f`
-6. telescope search in buffers:  `<Leader><Leader>`
-7. telescope search in last files: `<Leader>?`
+4. Open NVIM tree: `<Leader>r`
+5. Open `lazygit`: `<Leader>g`
+6. Auto-formatting:  `<Leader>f`
+7. telescope search in buffers:  `<Leader><Leader>`
+8. telescope search in last files: `<Leader>?`
 
 ## Rust
