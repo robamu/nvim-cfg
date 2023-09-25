@@ -28,6 +28,10 @@ require('packer').startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   use {
+    'nvim-tree/nvim-tree.lua',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+  use {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     requires = {
