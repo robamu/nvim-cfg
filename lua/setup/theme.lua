@@ -17,7 +17,7 @@ local catpuccin_pink = {
 }
 
 require("catppuccin").setup {
-  flavour = "mocha", -- latte, macchiato, frappe
+  flavour = "mocha", -- mocha, latte, macchiato, frappe
   color_overrides = {
     mocha = {
       text = "#F4CDE9",
@@ -33,9 +33,10 @@ require("catppuccin").setup {
       base = "#352939",
       mantle = "#211924",
       crust = "#1a1016",
-    }
+    },
   },
 }
+
 -- require("gruvbox").setup {}
 -- vim.cmd.colorscheme "gruvbox"
 
