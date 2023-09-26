@@ -18,11 +18,8 @@ require('packer').startup(function(use)
   use {
     "akinsho/toggleterm.nvim", tag = '*',
   }
-  use {
-    "ellisonleao/gruvbox.nvim",
-    priority = 1000,
-    config = function() vim.cmd.colorscheme 'gruvbox' end,
-  }
+  use { "ellisonleao/gruvbox.nvim" }
+  use { "catppuccin/nvim", as = "catppuccin" }
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -56,7 +53,7 @@ require('packer').startup(function(use)
   }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.2',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use {
     'nvim-telescope/telescope-fzf-native.nvim',
@@ -93,7 +90,7 @@ require('packer').startup(function(use)
   -- Adds extra functionality over rust analyzer
   use("simrat39/rust-tools.nvim")
   use {
-	  "windwp/nvim-autopairs",
+    "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
   }
   use('nvim-tree/nvim-web-devicons')
@@ -110,4 +107,3 @@ if packer_bootstrap then
 end
 
 require("setup")
-

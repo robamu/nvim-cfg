@@ -1,4 +1,4 @@
-require("setup/gruvbox")
+require("setup/theme")
 require("setup/mason")
 require("setup/neodev")
 require("setup/rust-tools")

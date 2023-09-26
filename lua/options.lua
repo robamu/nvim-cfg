@@ -8,7 +8,7 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.g.python3_host_prog = '/usr/bin/python3'
 
-vim.opt.background="dark"
+-- vim.opt.background="dark"
 vim.opt.relativenumber=true
 vim.opt.termguicolors=true
 vim.opt.number=true
@@ -74,4 +74,3 @@ vim.opt.gdefault=true
 -- Remove toolbar
 vim.cmd("set guioptions-=T")
 vim.opt.colorcolumn="80,100"
-
