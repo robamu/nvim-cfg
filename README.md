@@ -50,3 +50,9 @@ python3 -m pip install pynvim
 8. telescope search in last files: `<Leader>?`
 
 ## Rust
+
+# Configuring the theme
+
+You can find all theme settings inside the `lua/setup/theme.lua` folder. Currently,
+[`gruvbox`](https://github.com/ellisonleao/gruvbox.nvim) and
+[`catppuccino`](https://github.com/catppuccin/nvim) are pre-installed.
