@@ -52,8 +52,18 @@ require('packer').startup(function(use)
     requires = "nvim-treesitter/nvim-treesitter",
   }
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.2',
+    'nvim-telescope/telescope.nvim', tag = '0.1.3',
     requires = { { 'nvim-lua/plenary.nvim' } }
+  }
+  use {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-neotest/neotest-python",
+      "rouge8/neotest-rust",
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+    }
   }
   use {
     'nvim-telescope/telescope-fzf-native.nvim',
