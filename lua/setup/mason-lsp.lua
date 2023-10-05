@@ -8,6 +8,9 @@ local generic_lsg_cfg = require("setup/generic-lspcfg")
 local servers = {
   lua_ls = {
     Lua = {
+      completion = {
+        callSnippet = "Replace"
+      },
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
     },
@@ -16,7 +19,7 @@ local servers = {
 
 
 -- Plugin setup
-require('mason').setup()
+require('mason').setup {}
 
 -- Ensure the servers above are installed
 local mason_lspconfig = require('mason-lspconfig')
@@ -38,4 +41,3 @@ mason_lspconfig.setup_handlers {
     }
  end,
 }
-

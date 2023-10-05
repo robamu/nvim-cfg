@@ -110,7 +110,6 @@ require('packer').startup(function(use)
   use('averms/black-nvim')
 end)
 
-
 -- the first run will install packer and our plugins
 if packer_bootstrap then
   require("packer").sync()
