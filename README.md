@@ -8,7 +8,7 @@ cd ~/.config
 git clone git@github.com:robamu/nvim-cfg.git nvim
 ```
 
-You might need to run `:MasonUpdate` and `PackerInstall` again, even
+You might need to run `:MasonUpdate` and `:PackerInstall` again, even
 though this should be a fully self-installing setup in theory.
 
 Right now, this configuration has been used for work in:
@@ -38,7 +38,7 @@ sudo install lazygit /usr/local/bin
 python3 -m pip install pynvim
 ```
 
-# Most important custom keybindings
+# Most important custom keybindings and commands
 
 1. Leader key is remapped to `<Space>`.
 2. Open Terminal in same window: `<Leader>t`, then `i` to go into terminal mode.
@@ -48,6 +48,8 @@ python3 -m pip install pynvim
 6. Auto-formatting:  `<Leader>f`
 7. telescope search in buffers:  `<Leader><Leader>`
 8. telescope search in last files: `<Leader>?`
+9. Run nearest test: `:NtRun`
+10. Display test summary: `:NtSum`
 
 ## Rust
 
