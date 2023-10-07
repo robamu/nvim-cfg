@@ -46,6 +46,7 @@ require('packer').startup(function(use)
       ts_update()
     end,
   }
+  use('karb94/neoscroll.nvim')
   use {
     "nvim-treesitter/nvim-treesitter-textobjects",
     after = "nvim-treesitter",
