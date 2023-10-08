@@ -109,6 +109,7 @@ require('packer').startup(function(use)
   use('rcarriga/nvim-dap-ui')
   use('mfussenegger/nvim-dap-python')
   use('averms/black-nvim')
+  use("linux-cultist/venv-selector.nvim")
 end)
 
 -- the first run will install packer and our plugins
