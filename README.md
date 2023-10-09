@@ -20,6 +20,10 @@ Right now, this configuration has been used for work in:
 It is recommended to install [ripgrep](https://github.com/BurntSushi/ripgrep) and
 [fd](https://github.com/sharkdp/fd) for beter telescope functionality.
 
+The [`black`](https://github.com/psf/black) Python auto-formatter and the
+[`stylua`](https://github.com/JohnnyMorganz/StyLua) Lua auto-formatter will be installed
+automatically if they are not detected on the system.
+
 # Additional steps
 
 Install [lazygit](https://github.com/jesseduffield/lazygit#ubuntu)
@@ -46,11 +50,15 @@ python3 -m pip install pynvim
 3. Exit terminal mode: `<Leader><Esc>`
 4. Open NVIM tree: `<Leader>r`
 5. Open `lazygit`: `<Leader>g`
-6. Auto-formatting:  `<Leader>f`
-7. telescope search in buffers:  `<Leader><Leader>`
-8. telescope search in last files: `<Leader>?`
-9. Run nearest test: `:NtRun`
-10. Display test summary: `:NtSum`
+6. Auto-formatting using the [formatter plugin](https://github.com/mhartington/formatter.nvim):
+   `<Leader>f` or `:Format`
+7. Auto-format and write: `<Leader>F` or `:FormatWrite`
+8. telescope search in buffers:  `<Leader><Leader>`
+9. telescope search in last files: `<Leader>?`
+10. Run nearest test: `:NtRun`
+11. Open and jump into test output: `:NtShow`
+12. Display test summary: `:NtSum`
+13. Debug nearest test: `:NtDebug`
 
 ## Rust
 
