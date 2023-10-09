@@ -2,18 +2,18 @@ local generic_cfg = require("setup/generic-lspcfg")
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-require("lspconfig").pyright.setup {
+require("lspconfig").pyright.setup({
   capabilities = capabilities,
   on_attach = function(_, bufnr)
     generic_cfg.on_attach(_, bufnr)
-  end
-}
+  end,
+})
 
-require("lspconfig").ruff_lsp.setup {
+require("lspconfig").ruff_lsp.setup({
   on_attach = function(client, bufnr)
     generic_cfg.on_attach(client, bufnr)
     client.server_capabilities.hoverProvider = false
-  end
-}
+  end,
+})

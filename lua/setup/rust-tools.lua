@@ -10,10 +10,10 @@ local extension_path = codelldb:get_install_path() .. "/extension/"
 local codelldb_path = extension_path .. "adapter/codelldb"
 -- This is the shared object for Ubuntu.. might be different on different OSes
 local liblldb_path = extension_path .. "lldb/lib/liblldb"
-local this_os = vim.loop.os_uname().sysname;
+local this_os = vim.loop.os_uname().sysname
 
 -- The path in windows is different
-if this_os:find "Windows" then
+if this_os:find("Windows") then
   codelldb_path = extension_path .. "adapter\\codelldb.exe"
   liblldb_path = extension_path .. "lldb\\bin\\liblldb.dll"
 else
@@ -51,8 +51,9 @@ rt.setup({
   },
 
   dap = {
-    adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path)
-
-  }
+    adapter = require("rust-tools.dap").get_codelldb_adapter(
+      codelldb_path,
+      liblldb_path
+    ),
+  },
 })
-

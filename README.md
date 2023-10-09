@@ -15,6 +15,7 @@ Right now, this configuration has been used for work in:
 
 - Rust
 - Python
+- Lua
 
 It is recommended to install [ripgrep](https://github.com/BurntSushi/ripgrep) and
 [fd](https://github.com/sharkdp/fd) for beter telescope functionality.

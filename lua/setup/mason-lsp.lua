@@ -9,7 +9,7 @@ local servers = {
   lua_ls = {
     Lua = {
       completion = {
-        callSnippet = "Replace"
+        callSnippet = "Replace",
       },
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
@@ -17,27 +17,35 @@ local servers = {
   },
 }
 
-
 -- Plugin setup
-require('mason').setup {}
+require("mason").setup({})
 
 -- Ensure the servers above are installed
-local mason_lspconfig = require('mason-lspconfig')
+local mason_lspconfig = require("mason-lspconfig")
+
+local ensure_installed = { "lua_ls", "pyright", "ruff_lsp", "rust_analyzer" }
+-- Only install these if they are not found in $PATH
+if vim.fn.executable("stylua") == 0 then
+  table.insert(ensure_installed, "stylua")
+end
+if vim.fn.executable("black") == 0 then
+  table.insert(ensure_installed, "black")
+end
 
 mason_lspconfig.setup({
-  ensure_installed = { "lua_ls", "pyright", "ruff_lsp", "rust_analyzer", },
+  ensure_installed = ensure_installed,
 })
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-mason_lspconfig.setup_handlers {
+mason_lspconfig.setup_handlers({
   function(server_name)
-    require('lspconfig')[server_name].setup {
+    require("lspconfig")[server_name].setup({
       capabilities = capabilities,
       on_attach = generic_lsg_cfg.on_attach,
       settings = servers[server_name],
-    }
- end,
-}
+    })
+  end,
+})

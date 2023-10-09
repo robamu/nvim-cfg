@@ -1,5 +1,5 @@
 local fmt = require("formatter")
-fmt.setup {
+fmt.setup({
   -- Enable or disable logging
   logging = true,
   -- Set the log level
@@ -20,6 +20,14 @@ fmt.setup {
     -- any filetype
     ["*"] = {
       require("formatter.filetypes.any").remove_trailing_whitespace,
-    }
-  }
-}
+    },
+  },
+})
+
+vim.keymap.set("n", "<Leader>f", ":Format<CR>", { desc = "[F]ormat buffer" })
+vim.keymap.set(
+  "n",
+  "<Leader>F",
+  ":FormatWrite<CR>",
+  { desc = "[F]ormat buffer and write" }
+)

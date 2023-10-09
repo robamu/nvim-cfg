@@ -1,2 +1,2 @@
 -- Setup neovim lua configuration
-require('neodev').setup {}
+require("neodev").setup({})

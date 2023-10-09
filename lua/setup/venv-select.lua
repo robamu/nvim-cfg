@@ -1,1 +1,1 @@
-require("venv-selector").setup {}
+require("venv-selector").setup({})
