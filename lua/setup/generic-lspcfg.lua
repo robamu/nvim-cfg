@@ -47,7 +47,7 @@ M.on_attach = function(_, bufnr)
     vim.lsp.buf.format { async = true }
   end
   -- Create a command `:Format` local to the LSP buffer
-  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+  vim.api.nvim_buf_create_user_command(bufnr, 'LspFmt', function(_)
     format_func()
   end, { desc = 'Format current buffer with LSP' })
   nmap('<leader>f', format_func, '[F]ormat')

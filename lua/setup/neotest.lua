@@ -9,6 +9,9 @@ nt.setup({
 vim.api.nvim_create_user_command("NtRun", nt.run.run, {
   desc = '[Run] nearest Test with [N]eo[t]est',
 })
+vim.api.nvim_create_user_command("NtDebug", function(_) nt.run.run({ strategy = "dap" }) end, {
+  desc = '[Debug] nearest Test with [N]eo[t]est',
+})
 vim.api.nvim_create_user_command("NtShow", function(_) nt.output.open({ enter = true }) end, {
   desc = '[Show] and enter Output for [N]eo[t]est'
 })

@@ -28,6 +28,7 @@ require('packer').startup(function(use)
     'nvim-tree/nvim-tree.lua',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
+  use { 'mhartington/formatter.nvim' }
   use {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -65,6 +66,12 @@ require('packer').startup(function(use)
       "nvim-treesitter/nvim-treesitter",
       "antoinemadec/FixCursorHold.nvim",
     }
+  }
+  use {
+    'andythigpen/nvim-coverage',
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
   }
   use {
     'nvim-telescope/telescope-fzf-native.nvim',
