@@ -6,27 +6,44 @@ nt.setup({
   },
 })
 
-vim.api.nvim_create_user_command("NtRun", nt.run.run, {
+local run_desc = {
   desc = "[Run] nearest Test with [N]eo[t]est",
-})
-vim.api.nvim_create_user_command("NtDebug", function(_)
-  nt.run.run({ strategy = "dap" })
-end, {
+}
+local debug_desc = {
   desc = "[Debug] nearest Test with [N]eo[t]est",
-})
-vim.api.nvim_create_user_command("NtShow", function(_)
-  nt.output.open({ enter = true })
-end, {
+}
+local open_desc = {
   desc = "[Show] and enter Output for [N]eo[t]est",
-})
-vim.api.nvim_create_user_command("NtOutPanel", nt.output_panel.toggle, {
+}
+local debug_func = function(_)
+  nt.run.run({ strategy = "dap" })
+end
+local open_func = function(_)
+  nt.output.open({ enter = true })
+end
+local toggle_panel_desc = {
   desc = "Open [Out]put [Panel] for [N]eo[t]est",
-})
-vim.api.nvim_create_user_command("NtFile", function(_)
+}
+local run_file_func = function(_)
   nt.run.run(vim.fn.expand("%"))
-end, {
+end
+local run_file_desc = {
   desc = "Run current [File] with [N]eo[t]est",
-})
-vim.api.nvim_create_user_command("NtSum", nt.summary.toggle, {
+}
+local summary_desc = {
   desc = "Toggle [N]eo[t]est Summary",
-})
+}
+
+vim.api.nvim_create_user_command("NtRun", nt.run.run, run_desc)
+vim.api.nvim_create_user_command("NtDebug", debug_func, debug_desc)
+vim.api.nvim_create_user_command("NtOpen", open_func, open_desc)
+vim.api.nvim_create_user_command("NtPanel", nt.output_panel.toggle, toggle_panel_desc)
+vim.api.nvim_create_user_command("NtFile", run_file_func, run_file_desc)
+vim.api.nvim_create_user_command("NtSum", nt.summary.toggle, summary_desc)
+
+vim.keymap.set("n", "<Leader>nr", nt.run.run, run_desc)
+vim.keymap.set("n", "<Leader>nd", debug_func, run_desc)
+vim.keymap.set("n", "<Leader>no", open_func, open_desc)
+vim.keymap.set("n", "<Leader>np", nt.output_panel.toggle, toggle_panel_desc)
+vim.keymap.set("n", "<Leader>nf", run_file_func, run_file_desc)
+vim.keymap.set("n", "<Leader>ns", nt.summary.toggle, summary_desc)
