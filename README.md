@@ -45,20 +45,20 @@ python3 -m pip install pynvim
 
 # Most important custom keybindings and commands
 
-1. Leader key is remapped to `<Space>`.
-2. Open Terminal in same window: `<Leader>t`, then `i` to go into terminal mode.
-3. Exit terminal mode: `<Leader><Esc>`
-4. Open NVIM tree: `<Leader>r`
-5. Open `lazygit`: `<Leader>g`
-6. Auto-formatting using the [formatter plugin](https://github.com/mhartington/formatter.nvim):
-   `<Leader>f` or `:Format`
-7. Auto-format and write: `<Leader>F` or `:FormatWrite`
-8. telescope search in buffers:  `<Leader><Leader>`
-9. telescope search in last files: `<Leader>?`
-10. Run nearest test: `:NtRun`
-11. Open and jump into test output: `:NtShow`
-12. Display test summary: `:NtSum`
-13. Debug nearest test: `:NtDebug`
+- Leader key is remapped to `<Space>`.
+- Exit terminal mode: `<Leader><Esc>`
+- Open NVIM tree: `<Leader>r`
+- Open `lazygit`: `<Leader>g`
+- Auto-formatting using the [formatter plugin](https://github.com/mhartington/formatter.nvim):
+  `<Leader>f` or `:Format`
+- Auto-format and write: `<Leader>F` or `:FormatWrite`
+- telescope search in buffers:  `<Leader><Leader>`
+- telescope search in last files: `<Leader>?`
+- Run nearest test: `<Leader>tr` or `:NtRun`
+- Open and jump into test output: `<Leader>to` or `:NtShow`
+- Display test summary: `<Leader>ts` or `:NtSum`
+- Debug nearest test: `<Leader>td` or `:NtDebug`
+- Open Terminal in same window: `<Leader>tt`, then `i` to go into terminal mode.
 
 ## Rust
 
