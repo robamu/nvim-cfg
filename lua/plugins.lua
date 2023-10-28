@@ -56,6 +56,8 @@ require("packer").startup(function(use)
     end,
   })
   use("karb94/neoscroll.nvim")
+  use("ldelossa/litee.nvim")
+  use("ldelossa/litee-calltree.nvim")
   use({
     "nvim-treesitter/nvim-treesitter-textobjects",
     after = "nvim-treesitter",
