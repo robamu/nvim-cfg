@@ -22,7 +22,34 @@ M.on_attach = function(_, bufnr)
   -- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
   nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+  vim.api.nvim_buf_create_user_command(
+    bufnr,
+    "LspRename",
+    vim.lsp.buf.rename,
+    { desc = "LSP Rename" }
+  )
   nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+  vim.api.nvim_buf_create_user_command(
+    bufnr,
+    "LspCodeAction",
+    vim.lsp.buf.code_action,
+    { desc = "LSP Code Actions" }
+  )
+
+  nmap("<leader>ci", vim.lsp.buf.incoming_calls, "[I]ncoming [C]alls")
+  vim.api.nvim_buf_create_user_command(
+    bufnr,
+    "LspInCalls",
+    vim.lsp.buf.incoming_calls,
+    { desc = "[I]ncoming [C]alls" }
+  )
+  nmap("<leader>co", vim.lsp.buf.outgoing_calls, "[O]outgoing [C]alls")
+  vim.api.nvim_buf_create_user_command(
+    bufnr,
+    "LspOutCalls",
+    vim.lsp.buf.outgoing_calls,
+    { desc = "[O]utgoing [C]alls" }
+  )
 
   nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
   nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
