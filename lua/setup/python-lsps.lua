@@ -22,6 +22,7 @@ require("lspconfig").pylsp.setup({
         pycodestyle = { enabled = false },
         flake8 = { enabled = false },
       },
+      rope_autoimport = { enabled = true },
     },
   },
 })
