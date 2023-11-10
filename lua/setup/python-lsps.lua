@@ -20,9 +20,9 @@ require("lspconfig").pyright.setup({
 --    pylsp = {
 --      plugins = {
 --        pycodestyle = { enabled = false },
+--        rope_autoimport = { enabled = true },
 --        flake8 = { enabled = false },
 --      },
---      rope_autoimport = { enabled = true },
 --    },
 --  },
 --})
