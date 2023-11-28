@@ -54,6 +54,12 @@ require("nvim-treesitter.configs").setup({
         ["[M"] = "@function.outer",
         ["[]"] = "@class.outer",
       },
+      goto_next = {
+        ["]j"] = "@conditional.outer",
+      },
+      goto_previous = {
+        ["[j"] = "@conditional.outer",
+      },
     },
     swap = {
       enable = true,
