@@ -3,8 +3,17 @@ nvim configuration
 
 Personal neovim configuration.
 
+**Unix**
+
 ```sh
 cd ~/.config
+git clone git@github.com:robamu/nvim-cfg.git nvim
+```
+
+**Windows**
+
+```ps
+cd $HOME/AppData/Local
 git clone git@github.com:robamu/nvim-cfg.git nvim
 ```
 
