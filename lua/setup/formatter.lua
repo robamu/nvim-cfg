@@ -22,6 +22,15 @@ fmt.setup({
     cpp = {
       require("formatter.filetypes.cpp").clangformat,
     },
+    typescript = {
+      require("formatter.filetypes.typescript").prettier,
+    },
+    typescriptreact = {
+      require("formatter.filetypes.typescriptreact").prettier,
+    },
+    javascript = {
+      require("formatter.filetypes.javascript").prettier,
+    },
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype
     ["*"] = {

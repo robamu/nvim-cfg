@@ -1,9 +1,9 @@
 require("setup/theme")
 -- neodev must come before the LSP configuration
-require("setup/neodev")
-require("setup/mason-lsp")
-require("setup/rust-tools")
-require("setup/python-lsps")
+--
+-- The generic mason LSP config must come before all other individual LSP configs.
+require("setup/lsps")
+
 require("setup/python-dap")
 require("setup/venv-select")
 require("setup/autopairs")

@@ -8,5 +8,10 @@ require("lspconfig").clangd.setup({
   capabilities = capabilities,
   on_attach = function(_, bufnr)
     generic_cfg.on_attach(_, bufnr)
+    generic_cfg.nmap(
+      "<leader><tab>",
+      "<Cmd>ClangdSwitchSourceHeader<CR>",
+      "Switch to source or header file"
+    )
   end,
 })
