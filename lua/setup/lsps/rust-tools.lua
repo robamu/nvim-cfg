@@ -1,4 +1,4 @@
-local generic_cfg = require("setup/generic-lspcfg")
+local generic_cfg = require("setup/lsps/generic")
 local rt = require("rust-tools")
 
 local mason_registry = require("mason-registry")
