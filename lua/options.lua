@@ -91,3 +91,6 @@ vim.opt.gdefault = true
 -- Remove toolbar
 vim.cmd("set guioptions-=T")
 vim.opt.colorcolumn = "80,100"
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
