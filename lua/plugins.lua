@@ -129,6 +129,7 @@ require("packer").startup(function(use)
   use("rcarriga/nvim-dap-ui")
   use("mfussenegger/nvim-dap-python")
   use("linux-cultist/venv-selector.nvim")
+  use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 end)
 
 -- the first run will install packer and our plugins
