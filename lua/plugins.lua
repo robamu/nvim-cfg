@@ -28,7 +28,10 @@ require("packer").startup(function(use)
   use({
     "zbirenbaum/copilot-cmp",
     requires = { "copilot.lua" },
-    after = { "copilot.lua" },
+    after = { "copilot.lua", "nvim-cmp" },
+    config = function()
+      require("copilot_cmp").setup()
+    end,
   })
   use({
     "akinsho/toggleterm.nvim",
