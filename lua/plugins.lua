@@ -23,6 +23,14 @@ local packer_bootstrap = ensure_packer()
 require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
   use({
+    "zbirenbaum/copilot.lua",
+  })
+  use({
+    "zbirenbaum/copilot-cmp",
+    requires = { "copilot.lua" },
+    after = { "copilot.lua" },
+  })
+  use({
     "akinsho/toggleterm.nvim",
     tag = "*",
   })
