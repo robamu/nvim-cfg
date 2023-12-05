@@ -68,6 +68,7 @@ python3 -m pip install pynvim
 - Open and jump into test output: `<Leader>to` or `:NtShow`
 - Display test summary: `<Leader>ts` or `:NtSum`
 - Debug nearest test: `<Leader>td` or `:NtDebug`
+- Toggle breakpoint: `<Leader>dt` or `:DapToggleBreakpoint`
 - Open Terminal in same window: `<Leader>tt`, then `i` to go into terminal mode.
 
 ## Rust
