@@ -31,6 +31,9 @@ fmt.setup({
     javascript = {
       require("formatter.filetypes.javascript").prettier,
     },
+    html = {
+      require("formatter.filetypes.html").prettier,
+    },
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype
     ["*"] = {
