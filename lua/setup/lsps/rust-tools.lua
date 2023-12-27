@@ -37,3 +37,7 @@ rt.setup({
     adapter = codelldb_cfg,
   },
 })
+
+-- Only load this if .vscode/launch.json exists?
+-- Not fully happy with this yet..
+-- require('dap.ext.vscode').load_launchjs(nil, { cppdbg = {'c', 'cpp', 'rust'} })
