@@ -137,7 +137,12 @@ require("packer").startup(function(use)
   })
   use("nvim-tree/nvim-web-devicons")
   use("mfussenegger/nvim-dap")
-  use("rcarriga/nvim-dap-ui")
+  use({
+    "rcarriga/nvim-dap-ui",
+    requires = {
+      "nvim-neotest/nvim-nio",
+    },
+  })
   use("mfussenegger/nvim-dap-python")
   use("linux-cultist/venv-selector.nvim")
   use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })

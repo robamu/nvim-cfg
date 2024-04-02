@@ -38,6 +38,9 @@ fmt.setup({
       require("formatter.filetypes.css").prettier,
     },
     scss = { require("formatter.filetypes.css").prettier },
+    xml = {
+      require("formatter.filetypes.xml").xmllint,
+    },
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype
     ["*"] = {

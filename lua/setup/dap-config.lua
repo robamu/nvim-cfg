@@ -10,7 +10,7 @@ local cppdbg_cmd = extensions_path .. "/debugAdapters/bin/OpenDebugAD7"
 dap.adapters.cppdbg = {
   id = "cppdbg",
   type = "executable",
-  command = cppdbg_cmd
+  command = cppdbg_cmd,
 }
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
