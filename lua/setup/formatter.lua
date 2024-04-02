@@ -31,6 +31,9 @@ fmt.setup({
     javascript = {
       require("formatter.filetypes.javascript").prettier,
     },
+    json = {
+      require("formatter.filetypes.json").prettier,
+    },
     html = {
       require("formatter.filetypes.html").prettier,
     },
