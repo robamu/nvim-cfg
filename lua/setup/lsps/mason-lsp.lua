@@ -38,9 +38,9 @@ local ensure_installed = {
 if vim.fn.executable("stylua") == 0 then
   table.insert(ensure_installed, "stylua")
 end
-if vim.fn.executable("black") == 0 then
-  table.insert(ensure_installed, "black")
-end
+-- if vim.fn.executable("black") == 0 then
+  -- table.insert(ensure_installed, "black")
+-- end
 
 mason_lspconfig.setup({
   ensure_installed = ensure_installed,
