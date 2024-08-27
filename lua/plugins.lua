@@ -144,7 +144,10 @@ require("packer").startup(function(use)
     },
   })
   use("mfussenegger/nvim-dap-python")
-  use("linux-cultist/venv-selector.nvim")
+  use({
+    "linux-cultist/venv-selector.nvim",
+    branch = "regexp"
+  })
   use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 end)
 
