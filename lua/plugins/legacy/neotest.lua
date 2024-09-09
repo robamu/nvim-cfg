@@ -6,8 +6,7 @@ nt.setup({
   },
 })
 
-local run_desc = {
-  desc = "[Run] nearest Test with [N]eo[t]est",
+local run_desc = { desc = "[Run] nearest Test with [N]eo[t]est",
 }
 local debug_desc = {
   desc = "[Debug] nearest Test with [N]eo[t]est",
