@@ -2,6 +2,17 @@ return {
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
+    dependencies = {
+      -- cmp Path completion
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-buffer",
+      -- Luasnip completion
+      "saadparwaiz1/cmp_luasnip",
+      -- cmp LSP completion
+      "hrsh7th/cmp-nvim-lsp",
+      -- Copilot completion
+      "zbirenbaum/copilot-cmp",
+    },
     config = function()
       -- Setup Completion
       -- See https://github.com/hrsh7th/nvim-cmp#basic-configuration
@@ -94,17 +105,5 @@ return {
       local cmp_autopairs = require("nvim-autopairs.completion.cmp")
       cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end,
-  },
-  {
-    -- cmp Path completion
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-buffer",
-    -- Luasnip completion
-    "saadparwaiz1/cmp_luasnip",
-    -- cmp LSP completion
-    "hrsh7th/cmp-nvim-lsp",
-    dependencies = {
-      "hrsh7th/nvim-cmp",
-    },
   },
 }
