@@ -10,12 +10,12 @@ return {
     keys = {
       {
         "<leader>?",
-        require("telescope.builtin").oldfiles,
+        "<cmd>Telescope oldfiles<cr>",
         { desc = "[?] Find recently opened files" },
       },
       {
         "<leader><space>",
-        require("telescope.builtin").buffers,
+        "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
         { desc = "[ ] Find existing buffers" },
       },
       {
