@@ -10,7 +10,7 @@ local this_os = vim.loop.os_uname().sysname
 if this_os:find("Windows") then
   vim.g.python3_host_prog = "C:\\Windows\\py.exe"
 else
-  vim.g.python3_host_prog = "/usr/bin/python3"
+  vim.g.python3_host_prog = "~/.virtualenv/bin/python3"
 end
 
 vim.opt.background = "dark"
