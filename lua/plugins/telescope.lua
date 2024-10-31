@@ -10,12 +10,12 @@ return {
     keys = {
       {
         "<leader>?",
-        require("telescope.builtin").oldfiles,
+        "<cmd>Telescope oldfiles<cr>",
         { desc = "[?] Find recently opened files" },
       },
       {
         "<leader><space>",
-        require("telescope.builtin").buffers,
+        "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
         { desc = "[ ] Find existing buffers" },
       },
       {
@@ -31,19 +31,15 @@ return {
         end,
         { desc = "[/] Fuzzily search in current buffer" },
       },
-      {
-        "<leader>gf",
-        require("telescope.builtin").git_files,
-        { desc = "Search [G]it [F]iles" },
-      },
+      { "<leader>gf", "<cmd>Telescope git_files<cr>", desc = "Find Files (git-files)" },
       {
         "<leader>sf",
-        require("telescope.builtin").find_files,
+        "<cmd>Telescope find_files<cr>",
         { desc = "[S]earch [F]iles" },
       },
       {
         "<leader>sh",
-        require("telescope.builtin").help_tags,
+        "<cmd>Telescope help_tags<cr>",
         { desc = "[S]earch [H]elp" },
       },
       {
