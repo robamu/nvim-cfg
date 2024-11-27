@@ -33,7 +33,7 @@ return {
       --  },
       --})
 
-      require("lspconfig").ruff_lsp.setup({
+      require("lspconfig").ruff.setup({
         on_attach = function(client, bufnr)
           generic_cfg.on_attach(client, bufnr)
           client.server_capabilities.hoverProvider = false
