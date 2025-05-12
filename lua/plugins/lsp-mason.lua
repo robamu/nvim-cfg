@@ -1,9 +1,10 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    version = "2",
     dependencies = {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
+      "mason-org/mason.nvim",
+      "mason-org/mason-lspconfig.nvim",
     },
     config = function()
       local generic_cfg = require("plugins/helpers/generic-lsp")
@@ -29,22 +30,6 @@ return {
         end,
       })
 
-      --require("lspconfig").pylsp.setup({
-      --  capabilities = capabilities,
-      --  on_attach = function(client, bufnr)
-      --    generic_cfg.on_attach(client, bufnr)
-      --  end,
-      --  settings = {
-      --    pylsp = {
-      --      plugins = {
-      --        pycodestyle = { enabled = false },
-      --        rope_autoimport = { enabled = true },
-      --        flake8 = { enabled = false },
-      --      },
-      --    },
-      --  },
-      --})
-
       require("lspconfig").ruff.setup({
         on_attach = function(client, bufnr)
           generic_cfg.on_attach(client, bufnr)
@@ -54,7 +39,8 @@ return {
     end,
   },
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
+    version = "2",
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup()
