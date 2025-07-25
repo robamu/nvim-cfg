@@ -2,6 +2,7 @@ return {
   {
     "folke/lazydev.nvim",
     ft = "lua", -- only load on lua files
+    version = "1",
     opts = {
       library = {
         -- See the configuration section for more details

@@ -1,6 +1,7 @@
 return {
   {
     "catppuccin/nvim",
+    version = "1",
     name = "catppuccin",
     config = function()
       local none = {}
@@ -23,7 +24,7 @@ return {
       }
 
       require("catppuccin").setup({
-        flavour = "mocha", -- mocha, latte, macchiato, frappe
+        flavour = "frappe", -- mocha, latte, macchiato, frappe
         color_overrides = none, -- mocha_pink
       })
 

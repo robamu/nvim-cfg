@@ -1,6 +1,7 @@
 return {
   {
     "mfussenegger/nvim-dap",
+    version = "0.10",
     keys = {
       { "<Leader>dt", ":DapToggleBreakpoint<CR>" },
       { "<Leader>dx", ":DapTerminate<CR>" },
