@@ -2,7 +2,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    version = "0.9.2",
+    version = "0.9.3",
     config = function()
       require("nvim-treesitter.configs").setup({
         -- Add languages to be installed here that you want installed for treesitter
