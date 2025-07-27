@@ -13,7 +13,8 @@ return {
       nt.setup({
         adapters = {
           require("neotest-python"),
-          require("neotest-rust"),
+          -- require("neotest-rust"),
+          require("rustaceanvim.neotest")
         },
       })
 
@@ -63,13 +64,6 @@ return {
     end,
   },
 
-  {
-    "rouge8/neotest-rust",
-    ft = { "rs", "rust" },
-    dependencies = {
-      "nvim-neotest/neotest",
-    },
-  },
   {
     "nvim-neotest/neotest-python",
     ft = { "py", "python" },
