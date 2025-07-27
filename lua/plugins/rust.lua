@@ -22,8 +22,8 @@ return {
     "mrcjkb/rustaceanvim",
     version = "^6", -- Recommended
     lazy = false, -- This plugin is already lazy
-    opts = function()
-      server = {
+    init = function()
+      vim.g.rustaceanvim = {
         -- on_attach is a callback called when the language server attachs to the buffer
         on_attach = function(_, bufnr)
           local generic_cfg = require("plugins/helpers/generic-lsp")
@@ -43,10 +43,10 @@ return {
               },
             },
             -- enable clippy on save
-            checkOnSave = diagnostics == "rust-analyzer",
+            checkOnSave = true,
             -- Enable diagnostics if using rust-analyzer
             diagnostics = {
-              enable = diagnostics == "rust-analyzer",
+              enable = true,
             },
             files = {
               excludeDirs = {
