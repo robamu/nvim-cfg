@@ -23,7 +23,7 @@ return {
 
       -- Config for copilot: https://github.com/zbirenbaum/copilot-cmp
       local has_words_before = function()
-        if vim.api.nvim_buf_get_var(0, "buftype") == "prompt" then
+        if vim.api.nvim_get_option_value("buftype", { buf = 0 }) == "prompt" then
           return false
         end
         local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
