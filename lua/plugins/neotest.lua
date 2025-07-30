@@ -13,55 +13,80 @@ return {
       nt.setup({
         adapters = {
           require("neotest-python"),
+          require("rustaceanvim.neotest"),
           -- require("neotest-rust"),
-          require("rustaceanvim.neotest")
         },
       })
 
-      local run_desc = { desc = "[Run] nearest Test with [N]eo[t]est" }
-      local debug_desc = {
-        desc = "[Debug] nearest Test with [N]eo[t]est",
-      }
-      local open_desc = {
-        desc = "[Show] and enter Output for [N]eo[t]est",
-      }
-      local debug_func = function(_)
+      vim.api.nvim_create_user_command(
+        "NtRun",
+        nt.run.run,
+        { desc = "[Run] nearest Test with [N]eo[t]est" }
+      )
+      vim.api.nvim_create_user_command("NtDebug", function()
         nt.run.run({ strategy = "dap" })
-      end
-      local open_func = function(_)
+      end, { desc = "[Debug] nearest Test with [N]eo[t]est" })
+      vim.api.nvim_create_user_command("NtOpen", function()
         nt.output.open({ enter = true })
-      end
-      local toggle_panel_desc = {
-        desc = "Open [Out]put [Panel] for [N]eo[t]est",
-      }
-      local run_file_func = function(_)
-        nt.run.run(vim.fn.expand("%"))
-      end
-      local run_file_desc = {
-        desc = "Run current [File] with [N]eo[t]est",
-      }
-      local summary_desc = {
-        desc = "Toggle [N]eo[t]est Summary",
-      }
-
-      vim.api.nvim_create_user_command("NtRun", nt.run.run, run_desc)
-      vim.api.nvim_create_user_command("NtDebug", debug_func, debug_desc)
-      vim.api.nvim_create_user_command("NtOpen", open_func, open_desc)
+      end, { desc = "Open [Out]put [Panel] for [N]eo[t]est" })
       vim.api.nvim_create_user_command(
         "NtPanel",
         nt.output_panel.toggle,
-        toggle_panel_desc
+        { desc = "Open [Out]put [Panel] for [N]eo[t]est" }
       )
-      vim.api.nvim_create_user_command("NtFile", run_file_func, run_file_desc)
-      vim.api.nvim_create_user_command("NtSum", nt.summary.toggle, summary_desc)
-
-      vim.keymap.set("n", "<Leader>tr", nt.run.run, run_desc)
-      vim.keymap.set("n", "<Leader>td", debug_func, run_desc)
-      vim.keymap.set("n", "<Leader>to", open_func, open_desc)
-      vim.keymap.set("n", "<Leader>tp", nt.output_panel.toggle, toggle_panel_desc)
-      vim.keymap.set("n", "<Leader>tf", run_file_func, run_file_desc)
-      vim.keymap.set("n", "<Leader>ts", nt.summary.toggle, summary_desc)
+      vim.api.nvim_create_user_command("NtFile", function()
+        nt.run.run(vim.fn.expand("%"))
+      end, { desc = "Run current [File] with [N]eo[t]est" })
+      vim.api.nvim_create_user_command(
+        "NtSum",
+        nt.summary.toggle,
+        { desc = "Toggle [N]eo[t]est Summary" }
+      )
     end,
+    keys = {
+      {
+        "<Leader>tr",
+        function()
+          require("neotest").run.run()
+        end,
+        desc = "[Run] nearest Test with [N]eo[t]est",
+      },
+      {
+        "<Leader>td",
+        function()
+          require("neotest").run.run({ strategy = "dap" })
+        end,
+        desc = "[Debug] nearest Test with [N]eo[t]est",
+      },
+      {
+        "<Leader>to",
+        function()
+          require("neotest").output.open({ enter = true })
+        end,
+        desc = "[Show] and enter Output for [N]eo[t]est",
+      },
+      {
+        "<Leader>tp",
+        function()
+          require("neotest").output_panel.toggle()
+        end,
+        desc = "Open [Out]put [Panel] for [N]eo[t]est",
+      },
+      {
+        "<Leader>tf",
+        function()
+          require("neotest").run.run(vim.fn.expand("%"))
+        end,
+        desc = "Run current [File] with [N]eo[t]est",
+      },
+      {
+        "<Leader>ts",
+        function()
+          require("neotest").summary.toggle()
+        end,
+        desc = "Toggle [N]eo[t]est Summary",
+      },
+    },
   },
 
   {
