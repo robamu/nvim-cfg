@@ -35,9 +35,8 @@ require("lazy").setup({
     { import = "plugins.formatter" },
     { import = "plugins.coverage" },
 
-    { import = "plugins.lspkind" },
-    { import = "plugins.luasnip" },
     { import = "plugins.cosmetic" },
+    -- { import = "plugins.lspkind" },
 
     -- Language specific plugins.
     { import = "plugins.lua" },

@@ -10,13 +10,13 @@ return {
       })
     end,
   },
-  {
-    "zbirenbaum/copilot-cmp",
-    lazy = true,
-    config = function()
-      require("copilot_cmp").setup()
-    end,
-  },
+  -- {
+    -- "zbirenbaum/copilot-cmp",
+    -- lazy = true,
+    -- config = function()
+      -- require("copilot_cmp").setup()
+    -- end,
+  -- },
   {
     "AndreM222/copilot-lualine",
   },

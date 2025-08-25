@@ -9,8 +9,6 @@ return {
     config = function()
       local generic_cfg = require("plugins/helpers/generic-lsp")
 
-      -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-
       require("lspconfig").pyright.setup({
         capabilities = generic_cfg.capabilities,
         on_attach = function(_, bufnr)
