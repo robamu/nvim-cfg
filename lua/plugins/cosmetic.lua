@@ -31,9 +31,14 @@ return {
       vim.cmd.colorscheme("catppuccin")
     end,
   },
+  -- LUaline at bottom.
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
   -- gruvbox is a nice alternative, but I prefer catppuccin
   {
-    "ellisonleao/gruvbox.nvim", 
+    "ellisonleao/gruvbox.nvim",
     priority = 1000,
     config = true,
     enabled = false,

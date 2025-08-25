@@ -88,12 +88,12 @@ M.on_attach = function(_, bufnr)
   nmap("<leader>lf", format_func, "[F]ormat using the [L]SP")
 end
 
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
-M.capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+-- M.capabilities = vim.lsp.protocol.make_client_capabilities()
+-- M.capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 -- Add folding to the default capabilities, also required for UFO plugin.
-M.capabilities.textDocument.foldingRange = {
-  dynamicRegistration = false,
-  lineFoldingOnly = true,
-}
+-- M.capabilities.textDocument.foldingRange = {
+  -- dynamicRegistration = false,
+  -- lineFoldingOnly = true,
+-- }
 
 return M

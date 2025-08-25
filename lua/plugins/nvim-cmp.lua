@@ -1,3 +1,4 @@
+-- Currently not in use.
 return {
   {
     "hrsh7th/nvim-cmp",
@@ -33,18 +34,6 @@ return {
               :match("^%s*$")
             == nil
       end
-      cmp.setup({
-        mapping = {
-          ["<Tab>"] = vim.schedule_wrap(function(fallback)
-            if cmp.visible() and has_words_before() then
-              cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-            else
-              fallback()
-            end
-          end),
-        },
-      })
-
       local lspkind = require("lspkind")
 
       cmp.setup({
@@ -85,7 +74,7 @@ return {
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<CR>"] = cmp.mapping.confirm({
-            behaviour = cmp.ConfirmBehavior.Insert,
+            behavior = cmp.ConfirmBehavior.Insert,
             select = true,
           }),
           ["<C-x>"] = cmp.mapping.confirm({

@@ -24,8 +24,31 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
-    -- import your plugins
-    { import = "plugins" },
+    -- UI: Directory tree, folding, scrolling, terminal etc.
+    { import = "plugins.ui" },
+
+    -- Completion plugins.
+    { import = "plugins.completion" },
+    -- DAP, testing, formatting, coverage
+    { import = "plugins.dap" },
+    { import = "plugins.testing" },
+    { import = "plugins.formatter" },
+    { import = "plugins.coverage" },
+
+    { import = "plugins.lspkind" },
+    { import = "plugins.luasnip" },
+    { import = "plugins.cosmetic" },
+
+    -- Language specific plugins.
+    { import = "plugins.lua" },
+    { import = "plugins.rust" },
+    { import = "plugins.python" },
+
+    -- Others
+    { import = "plugins.copilot" },
+    { import = "plugins.telescope" },
+    { import = "plugins.treesitter" },
+    { import = "plugins.lsp-mason" },
   },
   -- automatically check for plugin updates
   checker = { enabled = true },
