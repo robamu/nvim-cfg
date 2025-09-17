@@ -5,6 +5,14 @@ return {
     dependencies = {
       "mason-org/mason-lspconfig.nvim",
     },
+    opts = {
+      setup = {
+        -- Prevent configuration here, is done by rustaceanvim.
+        rust_analyzer = function()
+          return true
+        end,
+      },
+    },
     config = function()
       local generic_cfg = require("plugins/helpers/generic-lsp")
       local lspconfig = require("lspconfig")
@@ -54,7 +62,7 @@ return {
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "rust_analyzer", "ruff", "basedpyright", "lua_ls" },
+      ensure_installed = { "ruff", "basedpyright", "lua_ls" },
     },
     dependencies = {
       { "mason-org/mason.nvim", opts = {} },
