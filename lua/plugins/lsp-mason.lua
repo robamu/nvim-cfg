@@ -8,15 +8,22 @@ return {
     },
     config = function()
       local generic_cfg = require("plugins/helpers/generic-lsp")
+      local lspconfig = require("lspconfig")
 
-      require("lspconfig").pyright.setup({
+      lspconfig.pyright.setup({
         capabilities = generic_cfg.capabilities,
         on_attach = function(_, bufnr)
           generic_cfg.on_attach(_, bufnr)
         end,
       })
 
-      require("lspconfig").clangd.setup({
+      lspconfig.basedpyright.setup({
+        on_attach = function(_, bufnr)
+          generic_cfg.on_attach(_, bufnr)
+        end,
+      })
+
+      lspconfig.clangd.setup({
         capabilities = generic_cfg.capabilities,
         on_attach = function(_, bufnr)
           generic_cfg.on_attach(_, bufnr)
@@ -28,7 +35,7 @@ return {
         end,
       })
 
-      require("lspconfig").ruff.setup({
+      lspconfig.ruff.setup({
         on_attach = function(client, bufnr)
           generic_cfg.on_attach(client, bufnr)
           client.server_capabilities.hoverProvider = false
@@ -41,7 +48,9 @@ return {
     version = "2",
     config = function()
       require("mason").setup()
-      require("mason-lspconfig").setup()
+      require("mason-lspconfig").setup({
+        ensure_installed = { "rust-analyzer", "ruff", "basedpyright" },
+      })
     end,
   },
 }
