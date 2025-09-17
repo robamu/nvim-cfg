@@ -10,12 +10,12 @@ return {
       local generic_cfg = require("plugins/helpers/generic-lsp")
       local lspconfig = require("lspconfig")
 
-      lspconfig.pyright.setup({
-        capabilities = generic_cfg.capabilities,
-        on_attach = function(_, bufnr)
-          generic_cfg.on_attach(_, bufnr)
-        end,
-      })
+      -- lspconfig.pyright.setup({
+      --   capabilities = generic_cfg.capabilities,
+      --   on_attach = function(_, bufnr)
+      --     generic_cfg.on_attach(_, bufnr)
+      --   end,
+      -- })
 
       lspconfig.basedpyright.setup({
         on_attach = function(_, bufnr)
