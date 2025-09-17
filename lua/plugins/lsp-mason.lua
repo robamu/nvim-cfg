@@ -3,7 +3,6 @@ return {
     "neovim/nvim-lspconfig",
     version = "2",
     dependencies = {
-      "mason-org/mason.nvim",
       "mason-org/mason-lspconfig.nvim",
     },
     config = function()
@@ -21,6 +20,14 @@ return {
         on_attach = function(_, bufnr)
           generic_cfg.on_attach(_, bufnr)
         end,
+        settings = {
+          basedpyright = {
+            analysis = {
+              reportMissingTypeStubs = false,
+              typeCheckingMode = "basic",
+            },
+          },
+        },
       })
 
       lspconfig.clangd.setup({
@@ -44,13 +51,13 @@ return {
     end,
   },
   {
-    "mason-org/mason.nvim",
-    version = "2",
-    config = function()
-      require("mason").setup()
-      require("mason-lspconfig").setup({
-        ensure_installed = { "rust_analyzer", "ruff", "basedpyright", "lua_ls" },
-      })
-    end,
+    "mason-org/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = { "rust_analyzer", "ruff", "basedpyright", "lua_ls" },
+    },
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
   },
 }
