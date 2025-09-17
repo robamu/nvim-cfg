@@ -23,6 +23,7 @@ return {
         settings = {
           basedpyright = {
             analysis = {
+              -- Problematic for some reason..
               reportMissingTypeStubs = false,
               typeCheckingMode = "basic",
             },
