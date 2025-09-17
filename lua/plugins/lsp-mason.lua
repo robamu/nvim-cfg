@@ -49,7 +49,7 @@ return {
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "rust-analyzer", "ruff", "basedpyright" },
+        ensure_installed = { "rust_analyzer", "ruff", "basedpyright", "lua_ls" },
       })
     end,
   },

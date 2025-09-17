@@ -6,12 +6,11 @@ vim.cmd("set clipboard+=unnamedplus")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-local this_os = vim.loop.os_uname().sysname
-if this_os:find("Windows") then
-  vim.g.python3_host_prog = "C:\\Windows\\py.exe"
-else
-  vim.g.python3_host_prog = "~/.virtualenv/bin/python3"
-end
+local py = vim.fn.has('win32') == 1
+           and 'C:\\Windows\\py.exe'
+           or vim.fn.expand('~/.virtualenv/bin/python3')
+
+vim.g.python3_host_prog = py
 
 vim.opt.background = "dark"
 vim.opt.relativenumber = true
