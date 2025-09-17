@@ -9,13 +9,13 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set(
   "n",
   "[d",
-  vim.diagnostic.goto_prev,
+  vim.diagnostic.get_prev,
   { desc = "Go to previous diagnostic message" }
 )
 vim.keymap.set(
   "n",
   "]d",
-  vim.diagnostic.goto_next,
+  vim.diagnostic.get_next,
   { desc = "Go to next diagnostic message" }
 )
 vim.keymap.set(

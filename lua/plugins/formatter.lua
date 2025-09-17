@@ -40,6 +40,9 @@ return {
         json = {
           require("formatter.filetypes.json").prettier,
         },
+        toml = {
+          require("formatter.filetypes.toml").taplo,
+        },
         html = {
           require("formatter.filetypes.html").prettier,
         },
