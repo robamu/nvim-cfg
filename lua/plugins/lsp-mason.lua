@@ -3,16 +3,17 @@ return {
     "neovim/nvim-lspconfig",
     version = "2",
     dependencies = {
-      "mason-org/mason-lspconfig.nvim",
+      "mason.nvim",
+      { "mason-org/mason-lspconfig.nvim", config = function() end },
     },
-    opts = {
-      setup = {
-        -- Prevent configuration here, is done by rustaceanvim.
-        rust_analyzer = function()
-          return true
-        end,
-      },
-    },
+    --opts = {
+    --  setup = {
+    --    -- Prevent configuration here, is done by rustaceanvim.
+    --    rust_analyzer = function()
+    --      return true
+    --    end,
+    --  },
+    --},
     config = function()
       local generic_cfg = require("plugins/helpers/generic-lsp")
       local lspconfig = require("lspconfig")
@@ -59,13 +60,11 @@ return {
       })
     end,
   },
+
   {
-    "mason-org/mason-lspconfig.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = { "ruff", "basedpyright", "lua_ls" },
-    },
-    dependencies = {
-      { "mason-org/mason.nvim", opts = {} },
     },
   },
 }
