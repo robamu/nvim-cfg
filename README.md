@@ -17,7 +17,7 @@ cd $HOME/AppData/Local
 git clone git@github.com:robamu/nvim-cfg.git nvim
 ```
 
-You might need to run `:MasonUpdate` and `:PackerInstall` again, even
+You might need to run `:MasonUpdate` and you might have to re-start `neovim` multiple times
 though this should be a fully self-installing setup in theory.
 
 Right now, this configuration has been used for work in:
@@ -30,9 +30,7 @@ Right now, this configuration has been used for work in:
 It is recommended to install [ripgrep](https://github.com/BurntSushi/ripgrep) and
 [fd](https://github.com/sharkdp/fd) for beter telescope functionality.
 
-The [`black`](https://github.com/psf/black) Python auto-formatter and the
-[`stylua`](https://github.com/JohnnyMorganz/StyLua) Lua auto-formatter will be installed
-automatically if they are not detected on the system.
+If you require a formatter for Lua, you can install `stylua` using Mason.
 
 # Additional steps
 
@@ -50,7 +48,7 @@ sudo install lazygit /usr/local/bin
 ## `pynvim` installation
 
 ```sh
-python3 -m pip install pynvim
+uv tool install --upgrade pynvim
 ```
 
 # Most important custom keybindings and commands
@@ -75,6 +73,5 @@ python3 -m pip install pynvim
 
 # Configuring the theme
 
-You can find all theme settings inside the `lua/setup/theme.lua` folder. Currently,
-[`gruvbox`](https://github.com/ellisonleao/gruvbox.nvim) and
-[`catppuccino`](https://github.com/catppuccin/nvim) are pre-installed.
+You can find all theme settings inside the `lua/plugins/cosmetic.lua` folder. Currently,
+[`catppuccino`](https://github.com/catppuccin/nvim) is used.
