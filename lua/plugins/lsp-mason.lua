@@ -16,7 +16,6 @@ return {
     --},
     config = function()
       local generic_cfg = require("plugins/helpers/generic-lsp")
-      local lspconfig = require("lspconfig")
 
       -- lspconfig.pyright.setup({
       --   capabilities = generic_cfg.capabilities,
@@ -25,7 +24,7 @@ return {
       --   end,
       -- })
 
-      lspconfig.basedpyright.setup({
+      vim.lsp.config("basedpyright", {
         on_attach = function(_, bufnr)
           generic_cfg.on_attach(_, bufnr)
         end,
@@ -40,7 +39,7 @@ return {
         },
       })
 
-      lspconfig.clangd.setup({
+      vim.lsp.config("clangd", {
         capabilities = generic_cfg.capabilities,
         on_attach = function(_, bufnr)
           generic_cfg.on_attach(_, bufnr)
@@ -52,7 +51,7 @@ return {
         end,
       })
 
-      lspconfig.ruff.setup({
+      vim.lsp.config("ruff", {
         on_attach = function(client, bufnr)
           generic_cfg.on_attach(client, bufnr)
           client.server_capabilities.hoverProvider = false
