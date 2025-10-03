@@ -54,10 +54,4 @@ return {
       "nvim-neotest/nvim-nio",
     },
   },
-  {
-    "mfussenegger/nvim-dap-python",
-    config = function()
-      require("dap-python").setup("~/.virtualenv/bin/python3")
-    end,
-  },
 }

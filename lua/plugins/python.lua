@@ -3,8 +3,6 @@ return {
   dependencies = {
     "neovim/nvim-lspconfig",
     "mfussenegger/nvim-dap",
-    --optional
-    "mfussenegger/nvim-dap-python",
     {
       "nvim-telescope/telescope.nvim",
       branch = "0.1.x",
@@ -18,5 +16,12 @@ return {
   ---@type venv-selector.Config
   opts = {
     -- Your settings go here
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    commit = "bfe572e4458e0ac876b9539a1e9f301c72db8ea0",
+    config = function()
+      require("dap-python").setup("uv")
+    end,
   },
 }
