@@ -19,7 +19,6 @@ return {
   },
   {
     "mfussenegger/nvim-dap-python",
-    commit = "bfe572e4458e0ac876b9539a1e9f301c72db8ea0",
     config = function()
       require("dap-python").setup("uv")
     end,

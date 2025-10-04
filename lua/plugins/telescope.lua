@@ -44,17 +44,17 @@ return {
       },
       {
         "<leader>sg",
-        require("telescope.builtin").live_grep,
+        function() require("telescope.builtin").live_grep() end,
         { desc = "[S]earch by [G]rep" },
       },
       {
         "<leader>sw",
-        require("telescope.builtin").grep_string,
+        function() require("telescope.builtin").grep_string() end,
         { desc = "[S]earch current [W]ord" },
       },
       {
         "<leader>sd",
-        require("telescope.builtin").diagnostics,
+        function() require("telescope.builtin").diagnostics() end,
         { desc = "[S]earch [D]iagnostics" },
       },
     },
