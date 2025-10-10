@@ -6,11 +6,16 @@ vim.cmd("set clipboard+=unnamedplus")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-local py = vim.fn.has('win32') == 1
-           and 'C:\\Windows\\py.exe'
-           or vim.fn.expand('~/.virtualenv/bin/python3')
+-- local host_python3_unix = vim.fn.expand('~/usr/bin/python3')
+-- local host_python3_pynvim_uv = vim.fn.expand('~/.local/share/uv/tools/pynvim/bin/python3')
+--
+-- local py = vim.fn.has('win32') == 1 and 'C:\\Windows\\py.exe'
+--   or (vim.fn.executable(host_python3_pynvim_uv) and host_python3_pynvim_uv)
+--   or (vim.fn.executable(host_python3_unix) and host_python3_unix)
 
-vim.g.python3_host_prog = py
+-- According to https://neovim.io/doc/user/provider.html#python-virtualenv, this should be
+-- auto-detected
+-- vim.g.python3_host_prog = vim.fn.expand('~/.local/bin/pynvim-python')
 
 vim.opt.background = "dark"
 vim.opt.relativenumber = true

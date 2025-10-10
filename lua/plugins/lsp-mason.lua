@@ -38,6 +38,14 @@ return {
           },
         },
       })
+      vim.lsp.enable("basedpyright")
+      vim.lsp.config("ruff", {
+        on_attach = function(client, bufnr)
+          generic_cfg.on_attach(client, bufnr)
+          client.server_capabilities.hoverProvider = false
+        end,
+      })
+      vim.lsp.enable("ruff")
 
       vim.lsp.config("clangd", {
         capabilities = generic_cfg.capabilities,
@@ -50,13 +58,7 @@ return {
           )
         end,
       })
-
-      vim.lsp.config("ruff", {
-        on_attach = function(client, bufnr)
-          generic_cfg.on_attach(client, bufnr)
-          client.server_capabilities.hoverProvider = false
-        end,
-      })
+      vim.lsp.enable("clangd")
     end,
   },
 
