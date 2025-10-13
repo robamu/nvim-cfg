@@ -19,6 +19,7 @@ return {
       rust = { "rustfmt", lsp_format = "fallback" },
       -- Conform will run the first available formatter
       javascript = { "prettierd", "prettier", stop_after_first = true },
+      python = { "ruff" },
       lua = { "stylua" },
       c = { "clang-format" },
       cpp = { "clang-format" },
