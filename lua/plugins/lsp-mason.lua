@@ -62,7 +62,10 @@ return {
     end,
   },
 
-  { "mason-org/mason.nvim" },
+  {
+    "mason-org/mason.nvim",
+    opts = {},
+  },
   {
     "owallb/mason-auto-install.nvim",
     dependencies = {
