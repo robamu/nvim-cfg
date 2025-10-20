@@ -62,10 +62,25 @@ return {
     end,
   },
 
+  { "mason-org/mason.nvim" },
   {
-    "mason-org/mason.nvim",
+    "owallb/mason-auto-install.nvim",
+    dependencies = {
+      "mason-org/mason.nvim",
+      -- Optional: LSP configurations in `vim.lsp.config` needs to be loaded
+      -- first to find associated filetypes automatically. If you use
+      -- lspconfig for that, add it as a dependency.
+      "neovim/nvim-lspconfig",
+    },
     opts = {
-      ensure_installed = { "ruff", "basedpyright", "lua_ls" },
+      packages = {
+        "lua-language-server",
+        "stylua",
+        "codelldb",
+        "ruff",
+        "basedpyright",
+        "rust-analyzer",
+      },
     },
   },
 }

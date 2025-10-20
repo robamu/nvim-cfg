@@ -24,6 +24,9 @@ return {
       c = { "clang-format" },
       cpp = { "clang-format" },
       json = { "prettier" },
+      -- Use the "_" filetype to run formatters on filetypes that don't
+      -- have other formatters configured.
+      ["_"] = { "trim_whitespace" },
     },
   },
 }
