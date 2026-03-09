@@ -43,6 +43,9 @@ return {
                   enable = true,
                 },
               },
+              check = {
+                allTargets = false
+              },
               -- enable clippy on save
               checkOnSave = true,
               -- Enable diagnostics if using rust-analyzer
