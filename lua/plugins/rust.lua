@@ -44,7 +44,7 @@ return {
                 },
               },
               check = {
-                allTargets = false
+                -- allTargets = false
               },
               -- enable clippy on save
               checkOnSave = true,
