@@ -55,7 +55,15 @@ return {
       })
       vim.lsp.enable("clangd")
 
-      vim.lsp.config("lua_ls", {})
+      vim.lsp.config("lua_ls", {
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" },
+            },
+          },
+        },
+      })
       vim.lsp.enable("lua_ls")
 
       --local function create_tinymist_command(command_name)
@@ -109,10 +117,10 @@ return {
       --    )
       --  end,
       --})
-      vim.lsp.config("clangd", {
+      vim.lsp.config("tinymist", {
         -- ...
         on_attach = function(client, bufnr)
-          vim.keymap.set("n", "<leader>tp", function()
+          vim.keymap.set("n", "<leader>lp", function()
             client:exec_cmd({
               title = "pin",
               command = "tinymist.pinMain",
@@ -120,7 +128,7 @@ return {
             }, { bufnr = bufnr })
           end, { desc = "[T]inymist [P]in", noremap = true })
 
-          vim.keymap.set("n", "<leader>tu", function()
+          vim.keymap.set("n", "<leader>lu", function()
             client:exec_cmd({
               title = "unpin",
               command = "tinymist.pinMain",
