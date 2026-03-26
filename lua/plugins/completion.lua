@@ -56,25 +56,6 @@ return {
       -- See the fuzzy documentation for more information
       fuzzy = {
         implementation = "prefer_rust_with_warning",
-        sorts = {
-          function(a, b)
-            local source_priority = {
-              snippets = 4,
-              lsp = 3,
-              codeium = 2,
-              path = 1,
-              buffer = 0,
-            }
-            local a_priority = source_priority[a.source_id]
-            local b_priority = source_priority[b.source_id]
-            if a_priority ~= b_priority then
-              return a_priority > b_priority
-            end
-          end,
-          -- defaults
-          "score",
-          "sort_text",
-        },
       },
     },
     opts_extend = { "sources.default" },
