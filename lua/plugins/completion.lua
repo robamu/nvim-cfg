@@ -16,7 +16,6 @@ return {
     -- build = 'nix run .#build-plugin',
 
     ---@module 'blink.cmp'
-    ---@type blink.cmp.Config
     opts = {
       -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
       -- 'super-tab' for mappings similar to vscode (tab to accept)
@@ -55,7 +54,28 @@ return {
       -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
       --
       -- See the fuzzy documentation for more information
-      fuzzy = { implementation = "prefer_rust_with_warning" },
+      fuzzy = {
+        implementation = "prefer_rust_with_warning",
+        sorts = {
+          function(a, b)
+            local source_priority = {
+              snippets = 4,
+              lsp = 3,
+              codeium = 2,
+              path = 1,
+              buffer = 0,
+            }
+            local a_priority = source_priority[a.source_id]
+            local b_priority = source_priority[b.source_id]
+            if a_priority ~= b_priority then
+              return a_priority > b_priority
+            end
+          end,
+          -- defaults
+          "score",
+          "sort_text",
+        },
+      },
     },
     opts_extend = { "sources.default" },
   },
@@ -69,14 +89,3 @@ return {
     -- this is equivalent to setup({}) function
   },
 }
-
--- return {
--- {
--- "L3MON4D3/LuaSnip",
--- follow latest release.
--- lazy = true,
--- version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
--- install jsregexp (optional!).
--- build = "make install_jsregexp",
--- },
--- }
