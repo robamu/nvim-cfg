@@ -5,7 +5,8 @@ return {
     -- optional: provides snippets for the snippet source
     dependencies = {
       "rafamadriz/friendly-snippets",
-      "Exafunction/codeium.nvim",
+      "fang2hou/blink-copilot"
+      -- "Exafunction/codeium.nvim",
     },
 
     -- use a release tag to download pre-built binaries
@@ -43,9 +44,15 @@ return {
       -- Default list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`
       sources = {
-        default = { "lsp", "path", "snippets", "buffer", "codeium" },
+        default = { "lsp", "path", "snippets", "buffer", "copilot" },
         providers = {
           codeium = { name = "Codeium", module = "codeium.blink", async = true },
+          copilot = {
+            name = "copilot",
+            module = "blink-copilot",
+            score_offset = 100,
+            async = true,
+          },
         },
       },
 
