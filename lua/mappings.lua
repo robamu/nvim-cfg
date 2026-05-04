@@ -30,9 +30,6 @@ vim.keymap.set(
   vim.diagnostic.setloclist,
   { desc = "Open diagnostics list" }
 )
-vim.keymap.set(
-  "n",
-  "<leader>il",
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()),
-  { desc = "Toggle inlay hints" }
-)
+vim.keymap.set("n", "<leader>il", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hints" })
