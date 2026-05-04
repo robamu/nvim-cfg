@@ -31,6 +31,8 @@ return {
             generic_cfg.on_attach(_, bufnr)
             -- Should work according to https://github.com/mrcjkb/rustaceanvim
             generic_cfg.nmap("<Leader>k", vim.lsp.buf.hover, "Hover actions")
+            -- Enable inlay hints by default.
+            vim.lsp.buf.inlay_hint.enable()
           end,
           default_settings = {
             -- to enable rust-analyzer settings visit:
