@@ -46,7 +46,7 @@ return {
       sources = {
         default = { "lsp", "path", "snippets", "buffer", "copilot" },
         providers = {
-          codeium = { name = "Codeium", module = "codeium.blink", async = true },
+          -- codeium = { name = "Codeium", module = "codeium.blink", async = true },
           copilot = {
             name = "copilot",
             module = "blink-copilot",
