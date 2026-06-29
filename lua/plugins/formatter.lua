@@ -20,6 +20,7 @@ return {
       -- Conform will run the first available formatter
       javascript = { "prettierd", "prettier", stop_after_first = true },
       python = { "ruff" },
+      typst = { lsp_format = "prefer" },  -- use LSP (tinymist) only
       lua = { "stylua" },
       c = { "clang-format" },
       cpp = { "clang-format" },

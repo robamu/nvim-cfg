@@ -118,7 +118,11 @@ return {
       --  end,
       --})
       vim.lsp.config("tinymist", {
-        -- ...
+        settings = {
+          formatterMode = "typstyle", -- or "typstfmt"
+          formatterProseWrap = true, -- insert hard line breaks
+          formatterPrintWidth = 100,
+        },
         on_attach = function(client, bufnr)
           vim.keymap.set("n", "<leader>lp", function()
             client:exec_cmd({
