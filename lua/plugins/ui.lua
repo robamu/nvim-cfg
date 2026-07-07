@@ -29,7 +29,8 @@ return {
   -- Folding.
   {
     "kevinhwang91/nvim-ufo",
-    version = "1",
+    -- version = "1",
+    branches = "main",
     lazy = false,
     dependencies = "kevinhwang91/promise-async",
     config = function()
