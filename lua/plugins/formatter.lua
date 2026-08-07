@@ -24,6 +24,7 @@ return {
       lua = { "stylua" },
       c = { "clang-format" },
       cpp = { "clang-format" },
+      vhdl = { "vsg" },
       json = { "prettier" },
       -- Use the "_" filetype to run formatters on filetypes that don't
       -- have other formatters configured.
