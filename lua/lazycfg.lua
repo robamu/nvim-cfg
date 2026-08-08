@@ -44,8 +44,6 @@ require("lazy").setup({
     { import = "plugins.python" },
 
     -- Others
-    { import = "plugins.copilot" },
-    -- { import = "plugins.windsurf" },
     { import = "plugins.telescope" },
     { import = "plugins.treesitter" },
     { import = "plugins.lsp-mason" },
