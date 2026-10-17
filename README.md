@@ -64,6 +64,25 @@ sudo install lazygit /usr/local/bin
 uv tool install --upgrade pynvim
 ```
 
+# Additional steps for HDL
+
+Install these Mason packages for VHDL support:
+
+```
+:MasonInstall rust_hdl vsg
+```
+
+- `rust_hdl` provides the `vhdl_ls` language server.
+- `vsg` is used as the VHDL formatter by conform.nvim.
+
+`vhdl_ls` only starts if a `vhdl_ls.toml` exists in the project root. The library must not be
+named `work`.
+
+```toml
+[libraries]
+my_lib.files = ["src/*.vhd"]
+```
+
 # Most important custom keybindings and commands
 
 - Leader key is remapped to `<Space>`.
