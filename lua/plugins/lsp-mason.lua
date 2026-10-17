@@ -31,6 +31,7 @@ return {
       vim.lsp.enable("basedpyright")
 
       vim.lsp.enable("vhdl_ls")
+      vim.lsp.enable("verible")
 
       vim.lsp.config("ruff", {
         on_attach = function(client, bufnr)

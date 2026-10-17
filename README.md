@@ -69,11 +69,12 @@ uv tool install --upgrade pynvim
 Install these Mason packages for VHDL support:
 
 ```
-:MasonInstall rust_hdl vsg
+:MasonInstall rust_hdl vsg verible
 ```
 
 - `rust_hdl` provides the `vhdl_ls` language server.
 - `vsg` is used as the VHDL formatter by conform.nvim.
+- `verible` provides both the LSP and formatter for Verilog and SystemVerilog
 
 `vhdl_ls` only starts if a `vhdl_ls.toml` exists in the project root. The library must not be
 named `work`.

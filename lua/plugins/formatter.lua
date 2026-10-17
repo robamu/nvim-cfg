@@ -20,11 +20,15 @@ return {
       -- Conform will run the first available formatter
       javascript = { "prettierd", "prettier", stop_after_first = true },
       python = { "ruff" },
-      typst = { lsp_format = "prefer" },  -- use LSP (tinymist) only
+      typst = { lsp_format = "prefer" }, -- use LSP (tinymist) only
       lua = { "stylua" },
       c = { "clang-format" },
       cpp = { "clang-format" },
+
       vhdl = { "vsg" },
+      systemverilog = { "verible" },
+      verilog = { "verible" },
+
       json = { "prettier" },
       -- Use the "_" filetype to run formatters on filetypes that don't
       -- have other formatters configured.
