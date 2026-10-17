@@ -30,6 +30,8 @@ return {
       })
       vim.lsp.enable("basedpyright")
 
+      vim.lsp.enable("vhdl_ls")
+
       vim.lsp.config("ruff", {
         on_attach = function(client, bufnr)
           generic_cfg.on_attach(client, bufnr)
