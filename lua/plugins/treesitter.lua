@@ -17,6 +17,12 @@ return {
         "vim",
         "markdown",
         "markdown_inline",
+        "javascript",
+        "typescript",
+        "tsx",
+        "svelte",
+        "html",
+        "css",
       })
 
       --require("nvim-treesitter.configs").setup({

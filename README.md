@@ -27,6 +27,8 @@ Right now, this configuration has been used for work in:
 - Python
 - Lua
 - C/C++
+- TypeScript
+- Svelte
 
 It is recommended to install [ripgrep](https://github.com/BurntSushi/ripgrep) and
 [fd](https://github.com/sharkdp/fd) for better telescope functionality.
@@ -83,6 +85,21 @@ named `work`.
 [libraries]
 my_lib.files = ["src/*.vhd"]
 ```
+
+# Additional steps for TypeScript and Svelte
+
+Install these Mason packages:
+
+```
+:MasonInstall typescript-language-server svelte-language-server prettierd
+```
+
+- `typescript-language-server` provides the `ts_ls` language server.
+- `svelte-language-server` provides the `svelte` language server.
+- `prettierd` is used as the formatter by conform.nvim. Formatting Svelte files requires
+  `prettier-plugin-svelte` in the project.
+
+Both language servers need `node` in the `PATH`.
 
 # Most important custom keybindings and commands
 
